@@ -41,6 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearCommand.cs" />
+    <Compile Include="PixelColorCommand.cs" />
+    <Compile Include="DrawVerticalCommand.cs" />
+    <Compile Include="DrawHorizontalCommand.cs" />
+    <Compile Include="ShowCommand.cs" />
+    <Compile Include="RegionCommand.cs" />
+    <Compile Include="CreateCommand.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Pixel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

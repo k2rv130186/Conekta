@@ -8,26 +8,27 @@ namespace Bussines
 {
     public class Pixel
     {
-        public int X { get; set;}
-        public int Y { get; set;}
-        public string Color { get; set;}
-        
+        public int X { get; set; }
+        public int Y { get; set; }
+        public char Color { get; set; }
+
 
         public Pixel(int x, int y)
         {
-            this.X= x;
+            this.X = x;
             this.Y = y;
             this.Clear();
         }
 
-        public void ChangeColor(string color)
+        public void ChangeColor(char color)
         {
             this.Color = color;
         }
-       
+
         public void Clear()
         {
-            this.Color = "O";
+            this.Color = 'O';
         }
     }
 }
+

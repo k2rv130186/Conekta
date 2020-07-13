@@ -8,8 +8,8 @@ namespace Bussines
 {
     public class Image
     {
-        private int M { get; set; }
-        private int N { get; set; }
+        public int M { get; set; }
+        public int N { get; set; }
         private List<Pixel> Pixels { get; set; }
 
         public Image(int m, int n)
@@ -41,13 +41,13 @@ namespace Bussines
             }
         }
 
-        public void ColorPixel(int x, int y, string color)
+        public void PixelColor(int x, int y, char color)
         {
             Pixel pix = this.Pixels.Where(p => p.X == x && p.Y == y).FirstOrDefault();
             pix.ChangeColor(color);
         }
 
-        public void DrawVertical(int x, int y1, int y2, string color)//V X Y1 Y2 C
+        public void DrawVertical(int x, int y1, int y2, char color)//V X Y1 Y2 C
         {
             List<Pixel> lstPixels = this.Pixels.Where(p => p.X == x && (p.Y >= y1 && p.Y <= y2)).ToList();
 
@@ -57,7 +57,7 @@ namespace Bussines
             }
         }
 
-        public void DrawHorizontal(int x1, int x2, int y, string color)//H X1 X2 Y C
+        public void DrawHorizontal(int x1, int x2, int y, char color)//H X1 X2 Y C
         {
             List<Pixel> lstPixels = this.Pixels.Where(p => p.Y == y && (p.X >= x1 && p.X <= x2)).ToList();
 
@@ -67,76 +67,75 @@ namespace Bussines
             }
         }
 
-        public void Recursive(Pixel pix, string originalColor, string newColor)
+        public void Recursive(Pixel pix, char originalColor, char newColor)
         {
-            int newX,newY;
+            int newX, newY;
             Pixel newPixel;
 
-            if( pix.Color== originalColor)
+            if (pix.Color == originalColor)
             {
                 pix.ChangeColor(newColor);
-            }
 
-            newX = pix.X - 1;
-            if(newX>=1)
-            {
-                newPixel = Pixels.Where(p => p.X == newX && p.Y == pix.Y).FirstOrDefault();
 
-                if(newPixel.Color==originalColor)
+                newX = pix.X - 1;
+                if (newX >= 1)
                 {
-                    Recursive(newPixel,originalColor,newColor);
+                    newPixel = Pixels.Where(p => p.X == newX && p.Y == pix.Y).FirstOrDefault();
+
+                    if (newPixel.Color == originalColor)
+                    {
+                        Recursive(newPixel, originalColor, newColor);
+                    }
+                }
+
+                newX = pix.X + 1;
+                if (newX <= M)
+                {
+                    newPixel = Pixels.Where(p => p.X == newX && p.Y == pix.Y).FirstOrDefault();
+
+                    if (newPixel.Color == originalColor)
+                    {
+                        Recursive(newPixel, originalColor, newColor);
+                    }
+                }
+
+                newY = pix.Y - 1;
+                if (newY >= 1)
+                {
+                    newPixel = Pixels.Where(p => p.X == pix.X && p.Y == newY).FirstOrDefault();
+
+                    if (newPixel.Color == originalColor)
+                    {
+                        Recursive(newPixel, originalColor, newColor);
+                    }
+                }
+
+                newY = pix.Y + 1;
+                if (newY <= N)
+                {
+                    newPixel = Pixels.Where(p => p.X == pix.X && p.Y == newY).FirstOrDefault();
+
+                    if (newPixel.Color == originalColor)
+                    {
+                        Recursive(newPixel, originalColor, newColor);
+                    }
                 }
             }
-
-            newX = pix.X + 1;
-            if (newX <= M)
-            {
-                newPixel = Pixels.Where(p => p.X == newX && p.Y == pix.Y).FirstOrDefault();
-
-                if (newPixel.Color == originalColor)
-                {
-                    Recursive(newPixel, originalColor, newColor);
-                }
-            }
-
-            newY = pix.Y - 1;
-            if (newY >= 1)
-            {
-                newPixel = Pixels.Where(p => p.X == pix.X && p.Y == newY).FirstOrDefault();
-
-                if (newPixel.Color == originalColor)
-                {
-                    Recursive(newPixel, originalColor, newColor);
-                }
-            }
-
-            newY = pix.Y + 1;
-            if (newY <= N)
-            {
-                newPixel = Pixels.Where(p => p.X == pix.X && p.Y == newY).FirstOrDefault();
-
-                if (newPixel.Color == originalColor)
-                {
-                    Recursive(newPixel, originalColor, newColor);
-                }
-            }
-
-
         }
 
-        public void Region(int x, int y, string color)//F X Y C
+        public void Region(int x, int y, char color)//F X Y C
         {
-            string originalColor = string.Empty;
+            char originalColor;
 
             Pixel pix = Pixels.Where(p => p.X == x && p.Y == y).FirstOrDefault();
 
             originalColor = pix.Color;
 
-            Recursive(pix, originalColor);
+            Recursive(pix, originalColor, color);
 
         }
 
-        public void Show()
+        public string Show()
         {
             string matriz = string.Empty;
 
@@ -144,10 +143,12 @@ namespace Bussines
             {
                 List<Pixel> lstPixels = this.Pixels.Where(p => p.Y == y).OrderBy(p => p.X).ToList();
 
-                matriz = matriz + string.Join(string.Empty, lstPixels)+ Environment.NewLine;
+                matriz = matriz + string.Join(string.Empty, lstPixels.Select(p=>p.Color)) + Environment.NewLine;
             }
+            return matriz;
         }
 
     }
 }
+
 
