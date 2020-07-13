@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalTestConekta", "TechnicalTestConekta\TechnicalTestConekta.csproj", "{4BEF624F-22A7-408B-9936-6E443629512D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bussines", "Bussines", "{AC33DE41-D1BF-4C2D-B70A-6E349B4D0042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussines", "Bussines\Bussines.csproj", "{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BEF624F-22A7-408B-9936-6E443629512D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEF624F-22A7-408B-9936-6E443629512D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEF624F-22A7-408B-9936-6E443629512D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEF624F-22A7-408B-9936-6E443629512D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1AEA410-1EE6-4DA7-AEC8-0DFA9AAFC67D} = {AC33DE41-D1BF-4C2D-B70A-6E349B4D0042}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85AF3179-2A9E-4021-A7D0-30A8596734D6}
+	EndGlobalSection
+EndGlobal
