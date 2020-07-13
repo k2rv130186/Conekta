@@ -16,7 +16,6 @@ namespace Bussines
         {
             Parameters = new List<object>();
             ValidateValues(strCommand);
-
         }
 
         private void ValidateValues(string strCommand)

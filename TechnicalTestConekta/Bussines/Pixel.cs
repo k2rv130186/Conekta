@@ -12,7 +12,6 @@ namespace Bussines
         public int Y { get; set; }
         public char Color { get; set; }
 
-
         public Pixel(int x, int y)
         {
             this.X = x;

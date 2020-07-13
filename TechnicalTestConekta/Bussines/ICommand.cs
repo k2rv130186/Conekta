@@ -8,7 +8,6 @@ namespace Bussines
 {
     public interface ICommand:IEmptyCommand
     {
-       List<Object> Parameters { get; set; }
-       
+       List<Object> Parameters { get; set; }       
     }
 }

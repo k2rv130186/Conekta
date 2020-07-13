@@ -11,6 +11,5 @@ namespace Bussines
         string Name { get; set; }
 
         object ExecuteCommand(Image img);
-
     }
 }

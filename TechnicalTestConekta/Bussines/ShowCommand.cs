@@ -13,7 +13,6 @@ namespace Bussines
         public ShowCommand(string strCommand, Image img)
         {
             ValidateValues(strCommand, img);
-
         }
 
         private void ValidateValues(string strCommand, Image img)

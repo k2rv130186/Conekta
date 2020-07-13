@@ -31,7 +31,6 @@ namespace Bussines
         public object ExecuteCommand(Image img)
         {
             img.Clear();
-
             return null;
         }
     }

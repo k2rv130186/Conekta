@@ -16,8 +16,7 @@ namespace TechnicalTestConekta
             while(true)
             {
                 ExecuteCommand();
-            }
-            
+            }            
         }
 
         static void ExecuteCommand()

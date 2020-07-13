@@ -62,7 +62,7 @@ namespace Bussines
                                 }
                                 else
                                 {
-                                    throw new Exception("The parameter C is incorrect");
+                                    throw new Exception("The parameter Color is incorrect");
                                 }
                             }
                             else
