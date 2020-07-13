@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bussines
 {
-    public class ShowCommand : ICommand
+    public class ShowCommand : IEmptyCommand
     {
         public string Name { get; set; }
-
-        public List<object> Parameters { get; set; }
 
         public ShowCommand(string strCommand, Image img)
         {
@@ -19,10 +17,7 @@ namespace Bussines
         }
 
         private void ValidateValues(string strCommand, Image img)
-        {
-
-            string[] values = strCommand.Split();
-
+        {        
             if (img != null)
             {
                 if (strCommand == "S")

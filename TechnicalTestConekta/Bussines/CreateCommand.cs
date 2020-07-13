@@ -39,6 +39,8 @@ namespace Bussines
                     {
                         if (outN >= 1 && outN <= 250)
                             Parameters.Add(outN);
+                        else
+                            throw new Exception("The parameter N is not valid, please write a valid integer between 1 and 250");
                     }
                     else
                     {

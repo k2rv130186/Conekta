@@ -26,7 +26,7 @@ namespace TechnicalTestConekta
             if (strCommand.Length == 0)
                 strCommand = " ";
             char command = strCommand[0];
-            ICommand icommand=null;
+            IEmptyCommand icommand=null;
             object obj = null;
             try
             {

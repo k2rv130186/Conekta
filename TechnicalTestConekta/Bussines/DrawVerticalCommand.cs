@@ -35,16 +35,25 @@ namespace Bussines
                     {
                         if (outx >= 1 && outx <= img.M)
                             Parameters.Add(outx);
+                        else
+                            throw new Exception("The parameter X is not valid, please write a valid integer between 1 and M");
 
                         if (int.TryParse(values[2], out outy1))
                         {
                             if (outy1 >= 1 && outy1 <= img.N)
                                 Parameters.Add(outy1);
+                            else
+                                throw new Exception("The parameter X is not valid, please write a valid integer between 1 and M");
 
                             if (int.TryParse(values[3], out outy2))
                             {
                                 if (outy2 >= 1 && outy1 <= img.N)
                                     Parameters.Add(outy2);
+                                else
+                                    throw new Exception("The parameter Y is not valid, please write a valid integer between 1 and N");
+
+                                if ((int)Parameters[1] > (int)Parameters[2])
+                                    throw new Exception("The range is incorrect, Y1 cannot be greater than Y2");
 
                                 if (values[4].Length == 1 && Char.IsUpper(Convert.ToChar(values[4])))
                                 {

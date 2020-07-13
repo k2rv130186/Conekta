@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bussines
 {
-    public class ClearCommand : ICommand
+    public class ClearCommand : IEmptyCommand
     {
-        public string Name { get; set; }
-
-        public List<object> Parameters { get; set; }
+        public string Name { get; set; }        
 
         public ClearCommand(string strCommand, Image img)
         {

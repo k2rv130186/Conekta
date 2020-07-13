@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bussines
 {
-    public interface ICommand:IEmptyCommand
+    public interface IEmptyCommand
     {
-       List<Object> Parameters { get; set; }
-       
+        string Name { get; set; }
+
+        object ExecuteCommand(Image img);
+
     }
 }
